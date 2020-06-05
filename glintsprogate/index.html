@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="assets\css\stylesheet.css">
+</head>
+<body>
+    <div class="topBackground">
+        <div class="topNav">
+            <div class="top-item top-menu">
+                <a>Team</a>
+                <a>Company</a>
+            </div>
+            <div class="top-item top-logo">
+                <img src="assets/img/logo.png"/>
+            </div>
+            <div class="top-item top-menu">
+                <a>Product</a>
+                <a>Contact</a>
+            </div>
+            <div class="top-item dummy">
+
+            </div>
+        </div>
+        <div class="model">
+            <img class="head" src="assets\img\landing-head.png" onmousedown="return false"/>
+            <img onmouseout="document.querySelector('.torso-item').innerHTML='0 Products';clearTimeout(myTimeout)" onmouseover="testfun('.torso-item',0,100,1000)" class="img-act torso" src="assets\img\landing-torso.png" onmousedown="return false" onclick="goToElement('#product',this.className)"/>
+            <div class="torso-line"></div>
+            <div class="torso-info info-box" onclick="goToElement('#product',this.className)">
+                <span>Torso</span>
+                <span class="torso-item item-value">0 Products</span>
+            </div>
+
+            <div class="dress">
+                <img class="img-act left-dress" src="assets\img\landing-left-dress.png" onmousedown="return false" onmousedown="return false"/>
+                <img class="img-act right-dress" src="assets\img\landing-right-dress.png" onmousedown="return false"/>
+            </div>
+            
+            <div class="shawl">
+                <img class="img-act left-shawl" src="assets\img\landing-left-shawl.png" onmousedown="return false"/>
+                <img class="img-act right-shawl" src="assets\img\landing-right-shawl.png" onmousedown="return false"/>
+            </div>
+    
+            <img onmouseout="document.querySelector('.pants-item').innerHTML='0 Products';clearTimeout(myTimeout)" onmouseover="testfun('.pants-item',0,100,1000)" class="img-act pants" src="assets\img\landing-pants.png" onmousedown="return false" onclick="goToElement('#product',this.className)"/>
+            <div class="pants-line"></div>
+            <div class="pants-info info-box" onclick="goToElement('#product',this.className)">
+                <span>Pants</span>
+                <span class="pants-item item-value">0 Products</span>
+            </div>
+
+            <img onmouseout="document.querySelector('.shoes-item').innerHTML='0 Products';clearTimeout(myTimeout)" onmouseover="testfun('.shoes-item',0,100,1000)" class="img-act shoes" src="assets\img\landing-shoes.png" onmousedown="return false" onclick="goToElement('#product',this.className)"/>
+            <div class="shoes-line"></div>
+            <div class="shoes-info info-box" onclick="goToElement('#product',this.className)">
+                <span>Shoes</span>
+                <span class="shoes-item item-value">0 Products</span>
+            </div>
+
+            <img class="left-hand" src="assets\img\landing-left-hand.png">
+            <img class="right-hand" src="assets\img\landing-right-hand.png">
+        </div>
+    </div>
+    <div class="bottomDetailed info-box" onclick="goToElement('#companyInfo',this.className)">
+        Click Here !
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-labelledby="title"
+            aria-describedby="desc" role="img" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <path d="M24 35H14V2h36v33H40"
+            stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke="#202020"
+            fill="none" data-name="layer2" stroke-linejoin="round"></path>
+            <path d="M32 20v41M21 48l11 13 11-13" stroke-width="2" stroke-miterlimit="10"
+            stroke-linecap="round" stroke="#202020" fill="none" data-name="layer1"
+            stroke-linejoin="round">
+            </path>
+        </svg>
+    </div>
+    <div class="companyInfo" id="companyInfo">
+        <div class="promo-head">New Arivals!</div>
+        <div class="promo-body">
+            <a class="first">Tingkatkan Penampilanmu</a> Dengan mode <a class="highlight-promo">TERBARU</a> dan gaya <a class="highlight-promo">TRENDI</a></div>
+        <div class="promo-description">Barang dengan merk terkenal ❚ raih diskon sebesar - besarnya<br>gratis ongkir seluruh Indonesia ❚ Grosir lebih MURAH</div>
+        <div style="color:white" class="promo-foot">⎻⎻⎻ <a href="#product">BELANJA SEKARANG</a></div>
+    </div>
+    <div style="top:1500px;position: absolute;" id="product">hehasdsaeh</div>
+    <div id="test">ee</div>
+</body>
+  <footer>
+    <script>
+      var myTimeout;
+      const testfun = (id, start, end, duration) => {
+        var range = end - start;
+        var current = start;
+        var increment = end > start? 1 : -1;
+        var stepTime = Math.abs(Math.floor(duration / range));
+        var obj = document.querySelector(id);
+
+        myTimeout = setTimeout(() => {
+          var timer = setInterval(function() {
+            current += increment;
+            obj.innerHTML = `${current} Products`;
+            if (current == end) {
+                clearInterval(timer);
+            }
+          }, stepTime);
+        }, 3000);
+      }
+      
+      const goToElement = (link,element=null) => {
+        let thisEle =  document.querySelector(link)
+        let Position = thisEle.getBoundingClientRect().top + window.pageYOffset - (screen.height*9/100)
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+          element.split(' ')[1] == "info-box" ? window.scrollTo({top:Position,behavior:'smooth'}) : null
+        }else {
+            window.scrollTo({top:Position,behavior:'smooth'})
+        }
+      }
+
+      window.onscroll = () => {
+          fixIt()
+        }
+      topNav = document.querySelector('.topNav');
+      topDesc = document.querySelector('.companyInfo');
+      const fixIt = () => {
+          if (window.pageYOffset > screen.height*86/100) {
+            topNav.classList.add('stickTopNav')
+            topDesc.classList.add('topAdd')
+          }else {
+            topNav.classList.remove('stickTopNav')
+            topDesc.classList.remove('topAdd')
+          }
+      }
+    </script>
+  </footer>
+</html>
