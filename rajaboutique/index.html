@@ -1,27 +1,61 @@
-<link rel="stylesheet" href="style.css">
-<div class="gg">
-   test
-</div>
-<section class="contact-info">
-   <h1 class="title">Team 4 Progate</h1>
-   
-      <form class="contact-form row">
-      
-         <div class="form-field col x-50">
-            <input id="name" class="input-text js-input" type="text" onchange="" required>
-            <label class="label" for="name">Name</label>
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="style.css">
+      <div class="gg">
+         test
+      </div>
+   </head>
+   <body>
+      <section>
+         <div class="contact-info">
+            <h1 class="title">Contact US</h1>
+            <form class="contact-form row">
+               <div class="form-field form-input">
+                  <input id="name" class="input-text trigger-input" type="text" required>
+                  <label class="label" for="name">Name</label>
+               </div>
+               <div class="form-field form-input">
+                  <input id="email" class="input-text trigger-input" type="email" required>
+                  <label class="label" for="email">E-mail</label>
+               </div>
+               <div class="form-field form-textarea">
+                  <textarea id="textarea_message" class="input-text trigger-input" type="text" onchange="auto_grow(this)" oninput="auto_grow(this)" maxlength="2222" required></textarea>
+                  <label id="message" class="label" for="message">Message</label>
+               </div>
+               <div class="form-field form-submit align-center">
+                  <input class="submit-btn" type="submit" value="Submit">
+               </div>
+            </form>
          </div>
-         <div class="form-field col x-50">
-            <input id="email" class="input-text js-input" type="email" required>
-            <label class="label" for="email">E-mail</label>
+         <div class="contact-info-button">
+            <div class="social-contact">
+               <div class="social-selector">
+                  <div class="social soc-instagram">
+                     <div class="social-info"><a>Instagram</a></div>
+                     <img class="social-ico" src="instagram.svg"/>
+                  </div>
+                  <div class="social soc-Whatsapp">
+                     <div class="social-info"><a>Whatsapp</a></div>
+                     <img class="social-ico" src="whatsapp.svg"/>
+                  </div>
+               </div>
+            </div>
+            <div class="social-panel">
+             
+            </div>
          </div>
-         <div class="form-field col x-100">
-            <textarea id="message" class="input-text js-input" type="text" onchange="auto_grow(this)" oninput="auto_grow(this)" required></textarea>
-            <label id="message" class="label" for="message">Message</label>
+         <div class="contact-menu">
+            <div class="social soc-instagram">
+               Contact US
+            </div>
+            <div class="social soc-Whatsapp">
+               Message US
+            </div>
          </div>
-         <div class="form-field col x-100 align-center">
-            <input class="submit-btn" type="submit" value="Submit">
-         </div>
-      </form>
-</section>
-<script src="index.js"></script>
+      </section>
+   </body>
+   <foot>
+      <script src="index.js"></script>
+   </foot>
+</html>
