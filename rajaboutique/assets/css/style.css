@@ -2,9 +2,15 @@
 @import url(https://fonts.googleapis.com/css?family=Lusitana:400,700);
 
 :root {
-	--contact-icon-size:30px;
+	--contact-icon-size:50px;
+	--main-color-1 : rgba(242, 150, 187, 1);
+	--main-color-2 : rgb(230, 230, 230);
+	--main-color-3 : rgb(53, 53, 53);;
 }
 
+.checkbtn i {
+	color: var(--main-color-2)
+} 
 html {
 	height: 100%;
 }
@@ -15,6 +21,9 @@ body {
 	position: relative;
 }
 
+section#contact {
+	background-color: var(--main-color-2);
+}
 section .contact-info {
 	text-align: center;
 }
@@ -54,6 +63,7 @@ section .contact-info {
 	 letter-spacing: 3px;
 	 padding-bottom: 48px;
 	 margin:0;
+	 color: var(--main-color-1);
 }
  .contact-form .form-field {
 	 position: relative;
@@ -66,15 +76,23 @@ section .contact-info {
 	 margin:0;
 	 height: 30px;
 	 border-width: 0 0 2px 0;
-	 border-color: #000;
+	 border-color: var(--main-color-1);
 	 font-family: Lusitana, serif;
 	 font-size: 18px;
 	 line-height: 26px;
 	 font-weight: 400;
 }
 
-.contact-form text-area.input-text {
+.contact-form text-area.input-text, .contact-form .input-text, select {
 	font-family: monospace;
+	background-color: var(--main-color-2);
+}
+
+.input-text:-webkit-autofill,
+.input-text:-webkit-autofill:hover, 
+.input-text:-webkit-autofill:focus, 
+.input-text:-webkit-autofill:active {
+	-webkit-box-shadow: 0 0 0 30px var(--main-color-2) inset !important;
 }
 
 .contact-form .input-text:focus {
@@ -97,30 +115,30 @@ section .contact-info {
 	 font-size: 18px;
 	 line-height: 26px;
 	 font-weight: 400;
-	 color: #888;
+	 color: var(--main-color-1);
 	 cursor: text;
 	 transition: transform 0.2s ease-in-out;
 }
 
  .contact-form .submit-btn {
 	 display: inline-block;
-	 background-color: #888;
-	 color: #fff;
+	 background-color: var(--main-color-2);
+	 color: var(--main-color-1);
 	 font-family: Raleway, sans-serif;
 	 text-transform: uppercase;
 	 letter-spacing: 2px;
 	 font-size: 16px;
 	 line-height: 24px;
 	 padding: 8px 16px;
-	 border: none;
+	 border: 1px solid var(--main-color-1);
 	 cursor: pointer;
 	 transition: 0.3s;
 }
 
 .contact-form .submit-btn:hover {
 	display: inline-block;
-	background-color: burlywood;
-	color: black;
+	background-color: var(--main-color-1);
+	color: white;
 	font-family: Raleway, sans-serif;
 	font-weight: bolder;
 	text-transform: uppercase;
@@ -129,7 +147,7 @@ section .contact-info {
 	line-height: 24px;
 	border-radius: 20px;
 	padding: 8px 16px;
-	border: none;
+	border: 1px solid white;;
 	cursor: pointer;
 }
 
@@ -138,9 +156,9 @@ section .contact-info {
 	overflow: hidden;
 	width: var(--contact-icon-size);
 	height: var(--contact-icon-size);
-	border:1px solid black;
+	border:1px solid var(--main-color-1);
 	border-radius: var(--contact-icon-size);
-	background-color:rgba(242, 150, 187, 1);
+	background-color: var(--main-color-1);
 	right:15px;
 	bottom:15px;
 	box-shadow:0 0px 3px 0 #ccc;
@@ -184,7 +202,7 @@ section .contact-info {
 
 .contact-info-button .social-contact .social-selector .social .social-info a:link, .contact-info-button .social-contact .social-selector .social .social-info a:visited {
 	text-decoration: none;
-	color:black;
+	color:white;
 }
 
 .contact-info-button .social-contact .social-selector .social {
@@ -211,12 +229,16 @@ section .contact-info {
 	height:100%;
 	justify-content: center;
 	align-items: center;
-	width: calc(var(--contact-icon-size) - 10px);
+	width: var(--contact-icon-size);
 	right:0;
 	bottom:0;
 	color:white;
 	position: absolute;
 	transition: 0.2s all;
+}
+
+.contact-info-button .social-panel img{
+	width: calc(var(--contact-icon-size) + 5px);
 }
 
 .contact-info-button:hover, .contact-info-button.active {
@@ -251,8 +273,78 @@ section .contact-info {
 	top:0;
 }
 
-.gg {
-	top:202px;
+.fadeMe{
+	animation:fade 2s infinite
+}
+
+.color-picker {
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+	justify-content: space-around;
+	flex-grow:5;
+}
+
+svg {
+	fill: var(--main-color-2);
+}
+.color-picker .blossom {
+	background-color: rgba(242, 150, 187, 1);
+}
+
+.color-picker .dark {
+	background-color: rgb(53, 53, 53);
+}
+
+.color-picker .light {
+	background-color: rgb(230, 230, 230);
+}
+
+.myFlex {
+	display:flex;
+	flex-direction: row;
+	place-content: space-between;
+}
+
+.color-item {
+	width:20px;
+	height:20px;
+	border: 1px solid black;
+	border-radius: 50%;
+}
+
+footer .content {
+	background-color: var(--main-color-1);
+	width: 100%;
+	font-size: 15px;
+	bottom: 0;
+	height: 140px;   
+}
+
+footer .footer {
+	margin-top: 5px;
+}
+
+footer .footer.left	{
+	line-height: 5px;
+	float: left;
+	letter-spacing: 0.5px;
+}
+
+footer .footer.left p {
+	margin: 20px;
+}
+
+@keyframes fade{
+	0%{
+		opacity:0
+	}
+	50%{
+		opacity:1
+	}
+	100%{
+		opacity:0
+	}
 }
 
 @media (max-width: 600px) { 
