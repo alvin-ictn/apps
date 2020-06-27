@@ -23,6 +23,7 @@ body {
 
 section#contact {
 	background-color: var(--main-color-2);
+	padding-top:70px;
 }
 section .contact-info {
 	text-align: center;
@@ -313,27 +314,6 @@ svg {
 	border-radius: 50%;
 }
 
-footer .content {
-	background-color: var(--main-color-1);
-	width: 100%;
-	font-size: 15px;
-	bottom: 0;
-	height: 140px;   
-}
-
-footer .footer {
-	margin-top: 5px;
-}
-
-footer .footer.left	{
-	line-height: 5px;
-	float: left;
-	letter-spacing: 0.5px;
-}
-
-footer .footer.left p {
-	margin: 20px;
-}
 
 @keyframes fade{
 	0%{
